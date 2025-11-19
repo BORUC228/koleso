@@ -1,0 +1,154 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-gradient-start: #0f172a;
+  --bg-gradient-end: #1f2937;
+  --card-bg: rgba(15, 23, 42, 0.95);
+  --card-border: rgba(148, 163, 184, 0.3);
+  --accent: #38bdf8;
+  --accent-soft: rgba(56, 189, 248, 0.2);
+  --danger: #f97373;
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --text-strong: #f9fafb;
+  --input-bg: rgba(15, 23, 42, 0.9);
+  --shadow-soft: 0 24px 80px rgba(15, 23, 42, 0.9);
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --transition-fast: 0.18s ease-out;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  color: var(--text-main);
+  background: radial-gradient(circle at top, #1f2937 0, #020617 55%, #020617 100%);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* APP LAYOUT */
+
+.app {
+  width: 100%;
+  max-width: 720px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-soft);
+  padding: 24px 22px 20px;
+  backdrop-filter: blur(18px);
+}
+
+/* HEADER */
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 10%, #ffffff33 0, #0f172a 60%);
+  border: 2px solid rgba(148, 163, 184, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.avatar-emoji {
+  font-size: 32px;
+}
+
+.title-block h1 {
+  margin: 0 0 4px;
+  font-size: 1.6rem;
+  color: var(--text-strong);
+  letter-spacing: 0.02em;
+}
+
+.title-block p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* BODY */
+
+.card-body {
+  border-top: 1px solid rgba(148, 163, 184, 0.3);
+  padding-top: 18px;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+}
+
+.field-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+#task-input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: var(--input-bg);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast), transform var(--transition-fast),
+    background var(--transition-fast);
+}
+
+#task-input::placeholder {
+  color: rgba(148, 163, 184, 0.7);
+}
+
+#task-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.3);
+  transform: translateY(-1px);
+  background: rgba(15, 23, 42, 0.95);
+}
+
+#luck-btn {
+  flex-shrink: 0;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: #0b1120;
+  box-shadow: 0 12px 3
